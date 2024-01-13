@@ -3,6 +3,9 @@
 A lightweight and safe all-in-one docker-composer for earning passive income from your unused internet
 bandwidth. A single instance of **cash-mint** can earn up to **50$** a month or more relative to your location.
 
+This is the example usage when I run **cash-mint** on my server:
+![Screenshot 2024-01-14 at 01 35 54](https://github.com/bearaujus/cash-mint/assets/64161364/ffdfbd79-acb7-4685-ac97-672775082dc6)
+
 ## Compatibility
 
 I'm creating **cash-mint** while learning [Jenkins](https://www.jenkins.io), [Systemd](https://systemd.io/),
