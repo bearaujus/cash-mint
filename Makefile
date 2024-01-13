@@ -26,13 +26,13 @@ status:
 .PHONY: check
 check:
 	@if [ -z "$(DOCKER_COMPOSE_BIN)" ]; then \
-		echo "ERR: docker-compose not found. please install docker. see: https://github.com/bearaujus/cash-mint/README.md#usage"; \
+		echo "ERR: docker-compose not found. please install docker. see: https://github.com/bearaujus/cash-mint/blob/master/README.md#usage"; \
 		exit 1; \
 	fi
 	@echo "OK: docker-compose is present."
 
 	@if [ ! -f .env ]; then \
-		echo "ERR: environment file is missing at '$(DOCKER_COMPOSE_ENV_FILE_NAME)'. see: https://github.com/bearaujus/cash-mint/README.md#usage"; \
+		echo "ERR: environment file is missing at '$(DOCKER_COMPOSE_ENV_FILE_NAME)'. see: https://github.com/bearaujus/cash-mint/blob/master/README.md#usage"; \
 		exit 1; \
 	fi
 	@echo "OK: environment file is present."
