@@ -39,7 +39,7 @@ To use **cash-mint**, you can run the following commands:
   ```
 
 - Fill all `<edit-me>` at recently created `.env`.
-  See: [How to set up env](https://github.com/bearaujus/cash-mint/how-to/setup-env.md)
+  See: [How to set up env](https://github.com/bearaujus/cash-mint/blob/master/how-to/setup-env.md)
   for more detailed guides.
   ```shell
   # you can use your favorite text editor to edit .env
