@@ -5,12 +5,12 @@ DOCKER_COMPOSE_ENV_FILE_NAME := .env
 # Starts the command in the console directly. To quit, just simply press CTRL+C. environment
 .PHONY: run
 run: check stop
-	sudo $(DOCKER_COMPOSE_BIN) --env-file $(DOCKER_COMPOSE_ENV_FILE_NAME) --remove-orphans up
+	sudo $(DOCKER_COMPOSE_BIN) --env-file $(DOCKER_COMPOSE_ENV_FILE_NAME) up --remove-orphans
 
 # Start the command in the background. To quit, just simply run `make stop`.
 .PHONY: start
 start: check stop
-	sudo $(DOCKER_COMPOSE_BIN) --env-file $(DOCKER_COMPOSE_ENV_FILE_NAME) --remove-orphans up -d
+	sudo $(DOCKER_COMPOSE_BIN) --env-file $(DOCKER_COMPOSE_ENV_FILE_NAME) up --remove-orphans -d
 
 # Stop the background processes that created from `make start`.
 .PHONY: stop
