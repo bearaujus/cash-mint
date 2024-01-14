@@ -1,21 +1,19 @@
 # CASH-MINT
 
 A lightweight and safe all-in-one docker-composer for earning passive income from your unused internet
-bandwidth. A single instance of **cash-mint** can earn up to **50$** a month or more relative to your location.
-
-This is the example usage when I run **cash-mint** on my server:
-![Screenshot 2024-01-14 at 01 35 54](https://github.com/bearaujus/cash-mint/assets/64161364/ffdfbd79-acb7-4685-ac97-672775082dc6)
+bandwidth.
+A single instance of **cash-mint** can earn up to **50$** a month or even more,
+this estimation is depending on your IP location.
 
 ## Compatibility
 
 I'm creating **cash-mint** while learning [Jenkins](https://www.jenkins.io), [Systemd](https://systemd.io/),
-and [Ubuntu OS](https://ubuntu.com/)
-architecture. I never test it on another operating system. In short, here are the current supported operating systems:
+and [Ubuntu OS](https://ubuntu.com/) architecture, so I never designed or testing **cash-mint** on another operating
+system.
+Here is the current supported operating system:
 
 ```shell
-Distributor ID:	Ubuntu
 Description:	Ubuntu 23.10
-Release:	23.10
 Codename:	mantic
 ```
 
@@ -107,6 +105,7 @@ Below are the list for sites that supported by **cash-mint**:
 7. [PROXYLITE](https://proxylite.ru/?r=8Q4XCYWF) _(referral link)_
 8. [PROXYRACK](https://peer.proxyrack.com/ref/phzcnf5r7nq1idtx4rhgglt6ayrtvqgkb8nwhkic) _(referral link)_
 9. [REPOCKET](https://link.repocket.co/WqgJ) _(referral link)_
+10. [TRAFFICMONETIZER](https://traffmonetizer.com/?aff=1612556) _(referral link)_
 
 ## Notes On Your First Run
 

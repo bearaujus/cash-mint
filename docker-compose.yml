@@ -8,16 +8,17 @@ services:
   cash-mint_bitping:
     container_name: cash-mint_bitping
     image: bitping/bitpingd:latest
-    restart: always
-    environment:
-      - TZ=${CFG_TIMEZONE}
     volumes:
       - ${CFG_WORKING_DIRECTORY}/.appdata/bitping:/root/.bitpingd
-      - /etc/localtime:${CFG_TIMEZONE_FILE}:ro
-    entrypoint: /bin/bash -c "chmod +x /app/bitpingd && /app/bitpingd login --email '${BITPING_EMAIL}' --password '${BITPING_PASSWORD}' && sleep 5 && /app/bitpingd run"
+    entrypoint: >
+      /bin/bash -c "
+      /app/bitpingd login
+      --email '${BITPING_EMAIL}'
+      --password '${BITPING_PASSWORD}' &&
+      /app/docker.sh"
     networks:
       cash-mint_network:
-        ipv4_address: 172.16.88.100
+        ipv4_address: 172.16.88.2
 
   # --------------------------------------------------------------------------------------------------------------------
   # Service: EARNFM
@@ -26,15 +27,11 @@ services:
   cash-mint_earnfm:
     container_name: cash-mint_earnfm
     image: earnfm/earnfm-client:latest
-    restart: always
     environment:
       - EARNFM_TOKEN=${EARNFM_TOKEN}
-      - TZ=${CFG_TIMEZONE}
-    volumes:
-      - /etc/localtime:${CFG_TIMEZONE_FILE}:ro
     networks:
       cash-mint_network:
-        ipv4_address: 172.16.88.101
+        ipv4_address: 172.16.88.3
 
   # --------------------------------------------------------------------------------------------------------------------
   # Service: HONEYGAIN
@@ -43,15 +40,14 @@ services:
   cash-mint_honeygain:
     container_name: cash-mint_honeygain
     image: honeygain/honeygain:latest
-    restart: always
-    environment:
-      - TZ=${CFG_TIMEZONE}
-    volumes:
-      - /etc/localtime:${CFG_TIMEZONE_FILE}:ro
-    command: -tou-accept -email ${HONEYGAIN_EMAIL} -pass ${HONEYGAIN_PASSWORD} -device ${HONEYGAIN_DEVICE}
+    command: >
+      -email ${HONEYGAIN_EMAIL} 
+      -pass ${HONEYGAIN_PASSWORD} 
+      -device ${HONEYGAIN_DEVICE}
+      -tou-accept
     networks:
       cash-mint_network:
-        ipv4_address: 172.16.88.102
+        ipv4_address: 172.16.88.4
 
   # --------------------------------------------------------------------------------------------------------------------
   # Service: MYSTERIUM
@@ -61,20 +57,18 @@ services:
   cash-mint_mysterium:
     container_name: cash-mint_mysterium
     image: mysteriumnetwork/myst:latest
-    restart: always
-    environment:
-      - TZ=${CFG_TIMEZONE}
     volumes:
       - ${CFG_WORKING_DIRECTORY}/.appdata/mysterium:/var/lib/mysterium-node
-      - /etc/localtime:${CFG_TIMEZONE_FILE}:ro
     cap_add:
       - NET_ADMIN
     ports:
       - "${MYSTERIUM_DASHBOARD_PORT}:4449"
-    command: service --agreed-terms-and-conditions
+    command: >
+      service 
+      --agreed-terms-and-conditions
     networks:
       cash-mint_network:
-        ipv4_address: 172.16.88.103
+        ipv4_address: 172.16.88.5
 
   # --------------------------------------------------------------------------------------------------------------------
   # Service: PACKETSTREAM
@@ -83,15 +77,11 @@ services:
   cash-mint_packetstream:
     container_name: cash-mint_packetstream
     image: packetstream/psclient:latest
-    restart: always
     environment:
       - CID=${PACKETSTREAM_CID}
-      - TZ=${CFG_TIMEZONE}
-    volumes:
-      - /etc/localtime:${CFG_TIMEZONE_FILE}:ro
     networks:
       cash-mint_network:
-        ipv4_address: 172.16.88.104
+        ipv4_address: 172.16.88.6
 
   # --------------------------------------------------------------------------------------------------------------------
   # Service: PAWNS
@@ -100,15 +90,15 @@ services:
   cash-mint_pawns:
     container_name: cash-mint_pawns
     image: iproyal/pawns-cli:latest
-    restart: always
-    environment:
-      - TZ=${CFG_TIMEZONE}
-    volumes:
-      - /etc/localtime:${CFG_TIMEZONE_FILE}:ro
-    command: -email=${PAWNS_EMAIL} -password=${PAWNS_PASSWORD} -device-name=${PAWNS_DEVICE_NAME} -device-id=${PAWNS_DEVICE_ID} -accept-tos
+    command: >
+      -email=${PAWNS_EMAIL} 
+      -password=${PAWNS_PASSWORD} 
+      -device-name=${PAWNS_DEVICE_NAME} 
+      -device-id=${PAWNS_DEVICE_ID} 
+      -accept-tos
     networks:
       cash-mint_network:
-        ipv4_address: 172.16.88.105
+        ipv4_address: 172.16.88.7
 
   # --------------------------------------------------------------------------------------------------------------------
   # Service: PROXYLITE
@@ -117,15 +107,11 @@ services:
   cash-mint_proxylite:
     container_name: cash-mint_proxylite
     image: proxylite/proxyservice:latest
-    restart: always
     environment:
       - USER_ID=${PROXYLITE_USER_ID}
-      - TZ=${CFG_TIMEZONE}
-    volumes:
-      - /etc/localtime:${CFG_TIMEZONE_FILE}:ro
     networks:
       cash-mint_network:
-        ipv4_address: 172.16.88.106
+        ipv4_address: 172.16.88.8
 
   # --------------------------------------------------------------------------------------------------------------------
   # Service: PROXYRACK
@@ -134,15 +120,11 @@ services:
   cash-mint_proxyrack:
     container_name: cash-mint_proxyrack
     image: proxyrack/pop:latest
-    restart: always
     environment:
       - UUID=${PROXYRACK_UUID}
-      - TZ=${CFG_TIMEZONE}
-    volumes:
-      - /etc/localtime:${CFG_TIMEZONE_FILE}:ro
     networks:
       cash-mint_network:
-        ipv4_address: 172.16.88.107
+        ipv4_address: 172.16.88.9
 
   # --------------------------------------------------------------------------------------------------------------------
   # Service: REPOCKET
@@ -151,37 +133,47 @@ services:
   cash-mint_repocket:
     container_name: cash-mint_repocket
     image: repocket/repocket:latest
-    restart: always
     environment:
       - RP_EMAIL=${REPOCKET_RP_EMAIL}
       - RP_API_KEY=${REPOCKET_RP_API_KEY}
-      - TZ=${CFG_TIMEZONE}
-    volumes:
-      - /etc/localtime:${CFG_TIMEZONE_FILE}:ro
     networks:
       cash-mint_network:
-        ipv4_address: 172.16.88.108
+        ipv4_address: 172.16.88.10
 
   # --------------------------------------------------------------------------------------------------------------------
-  # Service: WATCHTOWER
-  # Site: https://github.com/containrrr/watchtower
-  # Notes: Watchtower can update the running version of your containerized app. This tool is OP :D
+  # Service: TRAFFICMONETIZER
+  # Site: https://traffmonetizer.com/?aff=1612556 (referral)
   # --------------------------------------------------------------------------------------------------------------------
-  cash-mint_watchtower:
-    container_name: cash-mint_watchtower
+  cash-mint_trafficmonetizer:
+    container_name: cash-mint_trafficmonetizer
+    image: traffmonetizer/cli_v2:latest
+    command: >
+      start 
+      accept 
+      --token ${TRAFFICMONETIZER_TOKEN}
+      --device-name ${TRAFFICMONETIZER_DEVICE_NAME}
+      status
+    networks:
+      cash-mint_network:
+        ipv4_address: 172.16.88.11
+
+  # --------------------------------------------------------------------------------------------------------------------
+  # Service Util: WATCHTOWER
+  # Site: https://github.com/containrrr/watchtower
+  # Usage: Watchtower will update the cash-mint containers version and
+  #        will restart it with the same commands as the first-run.
+  # --------------------------------------------------------------------------------------------------------------------
+  cash-mint-util_watchtower:
+    container_name: cash-mint-util_watchtower
     image: containrrr/watchtower:latest
-    restart: always
-    environment:
-      - TZ=${CFG_TIMEZONE}
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
-      - /etc/localtime:${CFG_TIMEZONE_FILE}:ro
     command: >
       --cleanup
       --log-level trace
       --include-restarting
       --include-stopped
-      --interval 1800
+      --interval ${CFG_CONTAINER_UPDATE_INTERVAL_SEC}
       cash-mint_bitping
       cash-mint_earnfm
       cash-mint_honeygain
@@ -191,19 +183,29 @@ services:
       cash-mint_proxylite
       cash-mint_proxyrack
       cash-mint_repocket
+      cash-mint_trafficmonetizer
+      cash-mint-util_watchtower
     networks:
-      cash-mint_network:
-        ipv4_address: 172.16.88.109
+      cash-mint-util_network:
+        ipv4_address: 172.16.89.2
 
 # ----------------------------------------------------------------------------------------------------------------------
 # If you know what to do, this option may help in implement a more secure architecture by isolating
 # different components of the application.
 # ----------------------------------------------------------------------------------------------------------------------
 networks:
+  # network for cash-mint_* containers
   cash-mint_network:
     driver: bridge
     ipam:
       driver: default
       config:
         - subnet: 172.16.88.0/24
-# ----------------------------------------------------------------------------------------------------------------------
+
+  # network for cash-mint-util_* containers
+  cash-mint-util_network:
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+        - subnet: 172.16.89.0/24

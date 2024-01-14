@@ -2,12 +2,12 @@ DOCKER_COMPOSE_BIN := $(shell which docker-compose)
 DOCKER_COMPOSE_FILE_NAME := docker-compose.yml
 DOCKER_COMPOSE_ENV_FILE_NAME := .env
 
-# Starts the command in the console directly. To quit, just simply press CTRL+C. environment
+# Starts the process in the console directly. To quit, just simply press CTRL+C.
 .PHONY: run
 run: check stop
 	sudo $(DOCKER_COMPOSE_BIN) --env-file $(DOCKER_COMPOSE_ENV_FILE_NAME) up --remove-orphans
 
-# Start the command in the background. To quit, just simply run `make stop`.
+# Start the process in the background. To quit, just simply run `make stop`.
 .PHONY: start
 start: check stop
 	sudo $(DOCKER_COMPOSE_BIN) --env-file $(DOCKER_COMPOSE_ENV_FILE_NAME) up --remove-orphans -d

@@ -14,21 +14,12 @@ safety of this file.
   pwd
   ```
 
-- **CFG_TIMEZONE** (default: Asia/Jakarta *because I'm from Indonesia:D)
+- **CFG_CONTAINER_UPDATE_INTERVAL_SEC** (default: 3600 # will check for update every 1h on all **cash-mint** containers)
 
-  Set timezone for **cash-mint** services container.
-  _(Ref: [Link](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones))_
-
-
-- **CFG_TIMEZONE_FILE** (default: /etc/localtime)
-
-  Set timezone file for **cash-mint** services container. The usage is for syncing the **cash-mint** localtime
-  containers with the host machine:
-  ```
-  # ':ro' is stands for read-only
-  volumes:
-  - /etc/localtime:${CFG_TIMEZONE_FILE}:ro
-  ```
+  Set **cash-mint** containers update interval.
+  I'm using [Watchtower](https://github.com/containrrr/watchtower) for updating **cash-mint** containers.
+  [Watchtower](https://github.com/containrrr/watchtower) will update the cash-mint containers version and will restart
+  it with the same commands as the first-run.
 
 ## BITPING Config
 
@@ -165,3 +156,26 @@ After gathering your API key, then you can manually fill the following fields be
 - **REPOCKET_RP_API_KEY**
 
   Set REPOCKET container service API key.
+
+## TRAFFICMONETIZER Config
+
+Register an account from [TRAFFICMONETIZER](https://traffmonetizer.com/?aff=1612556) _(referral link)_ > Dashboard >
+Look at the
+box called `Your application token` on the top left.
+
+After gathering your token, then you can manually fill the following fields below:
+
+- **TRAFFICMONETIZER_TOKEN**
+
+  Set TRAFFICMONETIZER container service token.
+
+
+- **TRAFFICMONETIZER_DEVICE_NAME**
+
+  Set TRAFFICMONETIZER container service device name. Me personally will use return from:
+  ```shell
+  cat /etc/hostname
+  ```
+
+---
+Made with ❤️ from [bearaujus](https://www.linkedin.com/in/bearaujus/) @2024
