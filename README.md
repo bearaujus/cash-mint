@@ -109,6 +109,9 @@ Below are the list for sites that supported by **cash-mint**:
 
 ## Notes On Your First Run
 
+- If you don't want to use some **cash-mint** service(s), you can comment the service on `docker-compose.yml`.
+
+
 - Service: [MYSTERIUM](https://mystnodes.com)
 
   To start earning with MYSTERIUM, you need to register your local MYSTERIUM node.
