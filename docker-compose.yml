@@ -141,17 +141,17 @@ services:
         ipv4_address: 172.16.88.10
 
   # --------------------------------------------------------------------------------------------------------------------
-  # Service: TRAFFICMONETIZER
+  # Service: TRAFFMONETIZER
   # Site: https://traffmonetizer.com/?aff=1612556 (referral)
   # --------------------------------------------------------------------------------------------------------------------
-  cash-mint_trafficmonetizer:
-    container_name: cash-mint_trafficmonetizer
+  cash-mint_traffmonetizer:
+    container_name: cash-mint_traffmonetizer
     image: traffmonetizer/cli_v2:latest
     command: >
       start 
       accept 
-      --token ${TRAFFICMONETIZER_TOKEN}
-      --device-name ${TRAFFICMONETIZER_DEVICE_NAME}
+      --token ${TRAFFMONETIZER_TOKEN}
+      --device-name ${TRAFFMONETIZER_DEVICE_NAME}
       status
     networks:
       cash-mint_network:
@@ -183,7 +183,7 @@ services:
       cash-mint_proxylite
       cash-mint_proxyrack
       cash-mint_repocket
-      cash-mint_trafficmonetizer
+      cash-mint_traffmonetizer
       cash-mint-util_watchtower
     networks:
       cash-mint-util_network:

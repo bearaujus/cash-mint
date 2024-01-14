@@ -105,7 +105,7 @@ Below are the list for sites that supported by **cash-mint**:
 7. [PROXYLITE](https://proxylite.ru/?r=8Q4XCYWF) _(referral link)_
 8. [PROXYRACK](https://peer.proxyrack.com/ref/phzcnf5r7nq1idtx4rhgglt6ayrtvqgkb8nwhkic) _(referral link)_
 9. [REPOCKET](https://link.repocket.co/WqgJ) _(referral link)_
-10. [TRAFFICMONETIZER](https://traffmonetizer.com/?aff=1612556) _(referral link)_
+10. [TRAFFMONETIZER](https://traffmonetizer.com/?aff=1612556) _(referral link)_
 
 ## Notes On Your First Run
 
@@ -118,8 +118,7 @@ Below are the list for sites that supported by **cash-mint**:
 
     - Go to http://localhost:_<MYSTERIUM_DASHBOARD_PORT>_. (See: Your recently created .env)
     - Finish the node onboard.
-    - Go to Settings.
-    - Go to Account.
+    - Go to Settings > Account.
     - And you will see small box at the top right called `Mystnodes.com Integrations`.
     - Click on the `Claim on mystnodes.com` button.
 

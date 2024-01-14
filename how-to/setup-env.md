@@ -157,22 +157,22 @@ After gathering your API key, then you can manually fill the following fields be
 
   Set REPOCKET container service API key.
 
-## TRAFFICMONETIZER Config
+## TRAFFMONETIZER Config
 
-Register an account from [TRAFFICMONETIZER](https://traffmonetizer.com/?aff=1612556) _(referral link)_ > Dashboard >
+Register an account from [TRAFFMONETIZER](https://traffmonetizer.com/?aff=1612556) _(referral link)_ > Dashboard >
 Look at the
 box called `Your application token` on the top left.
 
 After gathering your token, then you can manually fill the following fields below:
 
-- **TRAFFICMONETIZER_TOKEN**
+- **TRAFFMONETIZER_TOKEN**
 
-  Set TRAFFICMONETIZER container service token.
+  Set TRAFFMONETIZER container service token.
 
 
-- **TRAFFICMONETIZER_DEVICE_NAME**
+- **TRAFFMONETIZER_DEVICE_NAME**
 
-  Set TRAFFICMONETIZER container service device name. Me personally will use return from:
+  Set TRAFFMONETIZER container service device name. Me personally will use return from:
   ```shell
   cat /etc/hostname
   ```
