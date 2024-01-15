@@ -8,6 +8,7 @@ services:
   cash-mint_bitping:
     container_name: cash-mint_bitping
     image: bitping/bitpingd:latest
+    restart: always
     volumes:
       - ${CFG_WORKING_DIRECTORY}/.appdata/bitping:/root/.bitpingd
     entrypoint: >
@@ -27,6 +28,7 @@ services:
   cash-mint_earnfm:
     container_name: cash-mint_earnfm
     image: earnfm/earnfm-client:latest
+    restart: always
     environment:
       - EARNFM_TOKEN=${EARNFM_TOKEN}
     networks:
@@ -40,6 +42,7 @@ services:
   cash-mint_honeygain:
     container_name: cash-mint_honeygain
     image: honeygain/honeygain:latest
+    restart: always
     command: >
       -email ${HONEYGAIN_EMAIL} 
       -pass ${HONEYGAIN_PASSWORD} 
@@ -57,6 +60,7 @@ services:
   cash-mint_mysterium:
     container_name: cash-mint_mysterium
     image: mysteriumnetwork/myst:latest
+    restart: always
     volumes:
       - ${CFG_WORKING_DIRECTORY}/.appdata/mysterium:/var/lib/mysterium-node
     cap_add:
@@ -77,6 +81,7 @@ services:
   cash-mint_packetstream:
     container_name: cash-mint_packetstream
     image: packetstream/psclient:latest
+    restart: always
     environment:
       - CID=${PACKETSTREAM_CID}
     networks:
@@ -90,6 +95,7 @@ services:
   cash-mint_pawns:
     container_name: cash-mint_pawns
     image: iproyal/pawns-cli:latest
+    restart: always
     command: >
       -email=${PAWNS_EMAIL} 
       -password=${PAWNS_PASSWORD} 
@@ -107,6 +113,7 @@ services:
   cash-mint_proxylite:
     container_name: cash-mint_proxylite
     image: proxylite/proxyservice:latest
+    restart: always
     environment:
       - USER_ID=${PROXYLITE_USER_ID}
     networks:
@@ -120,6 +127,7 @@ services:
   cash-mint_proxyrack:
     container_name: cash-mint_proxyrack
     image: proxyrack/pop:latest
+    restart: always
     environment:
       - UUID=${PROXYRACK_UUID}
     networks:
@@ -133,6 +141,7 @@ services:
   cash-mint_repocket:
     container_name: cash-mint_repocket
     image: repocket/repocket:latest
+    restart: always
     environment:
       - RP_EMAIL=${REPOCKET_RP_EMAIL}
       - RP_API_KEY=${REPOCKET_RP_API_KEY}
@@ -147,6 +156,7 @@ services:
   cash-mint_traffmonetizer:
     container_name: cash-mint_traffmonetizer
     image: traffmonetizer/cli_v2:latest
+    restart: always
     command: >
       start 
       accept 
@@ -166,6 +176,7 @@ services:
   cash-mint-util_watchtower:
     container_name: cash-mint-util_watchtower
     image: containrrr/watchtower:latest
+    restart: always
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
     command: >
@@ -184,7 +195,6 @@ services:
       cash-mint_proxyrack
       cash-mint_repocket
       cash-mint_traffmonetizer
-      cash-mint-util_watchtower
     networks:
       cash-mint-util_network:
         ipv4_address: 172.16.89.2
