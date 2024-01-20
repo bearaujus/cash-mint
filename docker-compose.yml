@@ -54,7 +54,7 @@ services:
 
   # --------------------------------------------------------------------------------------------------------------------
   # Service: MYSTERIUM
-  # Site: https://mystnodes.com
+  # Site: https://mystnodes.co/?referral_code=qGKgwIJSEpxvOKhZUb1BDsa1xSdPCLjTAWaacX25 (referral)
   # Local Dashboard: http://localhost:<MYSTERIUM_DASHBOARD_PORT>
   # --------------------------------------------------------------------------------------------------------------------
   cash-mint_mysterium:

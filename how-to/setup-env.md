@@ -67,7 +67,7 @@ the following fields below:
 
 ## MYSTERIUM Config
 
-Register an account from [MYSTERIUM](https://mystnodes.com). Then you can manually fill
+Register an account from [MYSTERIUM](https://mystnodes.co/?referral_code=qGKgwIJSEpxvOKhZUb1BDsa1xSdPCLjTAWaacX25) _(referral link)_. Then you can manually fill
 the following fields below:
 
 - **MYSTERIUM_DASHBOARD_PORT** (default: 4449)

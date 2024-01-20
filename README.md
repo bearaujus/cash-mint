@@ -99,7 +99,7 @@ Below are the list for sites that supported by **cash-mint**:
 1. [BITPING](https://bitping.com)
 2. [EARNFM](https://earn.fm/ref/BEARFZQR) _(referral link)_
 3. [HONEYGAIN](https://r.honeygain.me/HARYO1972B) _(referral link)_
-4. [MYSTERIUM](https://mystnodes.com)
+4. [MYSTERIUM](https://mystnodes.co/?referral_code=qGKgwIJSEpxvOKhZUb1BDsa1xSdPCLjTAWaacX25) _(referral link)_
 5. [PACKETSTREAM](https://packetstream.io/?psr=1RV8) _(referral link)_
 6. [PAWNS](https://pawns.app/?r=3284830) _(referral link)_
 7. [PROXYLITE](https://proxylite.ru/?r=8Q4XCYWF) _(referral link)_
@@ -112,7 +112,7 @@ Below are the list for sites that supported by **cash-mint**:
 - If you don't want to use some **cash-mint** service(s), you can comment the service on `docker-compose.yml`.
 
 
-- Service: [MYSTERIUM](https://mystnodes.com)
+- Service: [MYSTERIUM](https://mystnodes.co/?referral_code=qGKgwIJSEpxvOKhZUb1BDsa1xSdPCLjTAWaacX25) _(referral link)_
 
   To start earning with MYSTERIUM, you need to register your local MYSTERIUM node.
 
@@ -122,7 +122,7 @@ Below are the list for sites that supported by **cash-mint**:
     - And you will see small box at the top right called `Mystnodes.com Integrations`.
     - Click on the `Claim on mystnodes.com` button.
 
-  Now your node should be appeared on [MYSTERIUM](https://mystnodes.com) dashboard.
+  Now your node should be appeared on MYSTERIUM dashboard.
 
 
 - Service: [PROXYRACK](https://peer.proxyrack.com/ref/phzcnf5r7nq1idtx4rhgglt6ayrtvqgkb8nwhkic) _(referral link)_
